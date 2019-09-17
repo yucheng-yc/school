@@ -5,281 +5,331 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+    <link rel="stylesheet" href="./css/index2.css">
+    <link rel="stylesheet" href="./css/com.css">
+    <script>
+
+        //函数封装减少hover移入的代码重复
+        function createHover(content,str,ele){
+            content===str&&$(ele).css("height","44px");
+           
+        }
+        //函数封装减少hover移出的代码重复
+        function createHoverOut(content,str,ele){
+            content===str&&$(".nav_child>.child>.p").hover(()=>{
+                    $(this).css("height","44px");
+                },()=>{
+                    $(ele).css("height","0px");
+                }
+                ) 
+        }
+         $(()=>{
+            $(".header>.nav>.clear>li").hover((e)=>{
+                var html=e.target.innerHTML;
+               if(html==="首页"){
+
+               }
+                createHover(html,"导览",".c2");
+                createHover(html,"展览",".c3");
+                createHover(html,"教育",".c4");
+                createHover(html,"探索",".c5");
+                createHover(html,"学术",".c6");
+                createHover(html,"文创",".c7");
+                createHover(html,"关于",".c8");
+            },
+            (e)=>{
+                var html=e.target.innerHTML;
+                if(html==="首页"){
+
+                }
+                createHoverOut(html,"导览",".c2");
+                createHoverOut(html,"展览",".c3");
+                createHoverOut(html,"教育",".c4");
+                createHoverOut(html,"探索",".c5");
+                createHoverOut(html,"学术",".c6");
+                createHoverOut(html,"文创",".c7");
+                createHoverOut(html,"关于",".c8");   
+            })
+        })
     
-    </style>
+    </script>
 </head>
 <body>
-    <div class="nav">
-        <ul class="clear">
-            <li>
-                <a href="/Home.html">首页</a>
-                <b><img src="./img/trigon.png" width="18"></b>
-            </li>
-            <li class="">
-                <a href="/Visit.html">导览</a>
-                <b><img src="./img/trigon.png" width="18"></b>
-            </li>
-            <li>
-                <a href="/shows.html">展览</a>
-                <b><img src="./img/trigon.png" width="18"></b>
-            </li>
-            <li>
-                <a href="/Events.html">教育</a>
-                <b><img src="./img/trigon.png" width="18"></b>
-            </li>
-            <li class="">
-                <a href="/Explore.html">探索</a>
-                <b><img src="./img/trigon.png" width="18"></b>
-            </li>
-            <li class="">
-                <a href="/Research.html">学术</a>
-                <b><img src="./img/trigon.png" width="18"></b>
-            </li>
-            <li class="">
-                <a href="/Creative.html">文创</a>
-                <b><img src="./img/trigon.png" width="18"></b>
-            </li>
-            <li>
-                <a href="/About.html">关于</a>
-                <b><img src="./img/trigon.png" width="18"></b>
-            </li>        
-        </ul>
+    <div class="header">
+        <div class="nav">
+            <ul class="clear">
+                <li>
+                    <a href="/Home.html">首页</a>
+                    <b><img src="./img/trigon.png" width="18"></b>
+                </li>
+                <li class="">
+                    <a href="/Visit.html">导览</a>
+                    <b><img src="./img/trigon.png" width="18"></b>
+                </li>
+                <li>
+                    <a href="/shows.html">展览</a>
+                    <b><img src="./img/trigon.png" width="18"></b>
+                </li>
+                <li>
+                    <a href="/Events.html">教育</a>
+                    <b><img src="./img/trigon.png" width="18"></b>
+                </li>
+                <li class="">
+                    <a href="/Explore.html">探索</a>
+                    <b><img src="./img/trigon.png" width="18"></b>
+                </li>
+                <li class="">
+                    <a href="/Research.html">学术</a>
+                    <b><img src="./img/trigon.png" width="18"></b>
+                </li>
+                <li class="">
+                    <a href="/Creative.html">文创</a>
+                    <b><img src="./img/trigon.png" width="18"></b>
+                </li>
+                <li>
+                    <a href="/About.html">关于</a>
+                    <b><img src="./img/trigon.png" width="18"></b>
+                </li>        
+            </ul>
+        </div>
     </div>
-
+    
     <div class="nav_child">
         <div class="child c1">
             <div class="p"></div>
         </div>
-            <div class="child c2">
-				<div class="p" style="margin-left: 159px;">
-					<p>
-                        <strong> 
-                            <a href="/Visit.html#block3">开放时间</a> 
+
+        <div class="child c2">
+            <div class="p">
+                <p>
+                    <strong> 
+                        <a href="/Visit.html#block3">开放时间</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/Visit.html#block4">票务服务</a>
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                    <a href="/Visit.html#block5">交通路线</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong>
+                        <a href="/Visit.html#block6">游览须知</a>
+                    </strong>
+                </p>
+                <p class="last">
+                    <strong> 
+                        <a id="bdclick_btn1" href="#" target="_blank">全景故宫</a> 
+                    </strong>
+                </p>
+            </div>
+        </div>
+        
+        <div class="child c3">
+            <div class="p">
+                <p>
+                    <strong>
+                        <a href="/shows.html#temporary2">近期展览</a>
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/shows.html#temporary4">专馆</a>
                         </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/Visit.html#block4">票务服务</a>
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/Visit.html#block5">交通路线</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong>
-                             <a href="/Visit.html#block6">游览须知</a>
-                        </strong>
+                </p>
+                <p>
+                    <strong> 
+                            <a href="/shows.html#temporary_5">原状陈列</a> 
+                    </strong>
+                </p>
+                <p class="last">
+                    <strong> 
+                        <a href="/shows.html#temporary_6">赴外展览</a> 
+                    </strong>
+                </p>
+        </div>
+        </div>
+        
+        <div class="child c4">
+            <div class="p">
+                <p>
+                    <strong> 
+                        <a href="/Events.html#hd1-2">教育新闻</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/Events.html#hd1-3">故宫博物院教育中心</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong>
+                            <a href="/Events.html#hd1-6">国际博协培训中心</a> 
+                    </strong>
                     </p>
                     <p class="last">
                         <strong> 
-                            <a id="bdclick_btn1" href="http://webapp.vizen.cn/gugong_app_pc/index2.html" target="_blank">全景故宫</a> 
-                        </strong>
-                    </p>
-                </div>
-            </div>
-            
-            <div class="child c3">
-				<div class="p">
-					<p>
-                        <strong>
-                            <a href="/shows.html#temporary2">近期展览</a>
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/shows.html#temporary4">专馆</a>
-                         </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                             <a href="/shows.html#temporary_5">原状陈列</a> 
-                        </strong>
-                    </p>
-                    <p class="last">
-                        <strong> 
-                            <a href="/shows.html#temporary_6">赴外展览</a> 
-                        </strong>
-                    </p>
-            </div>
-            </div>
-            
-            <div class="child c4">
-				<div class="p">
-					<p>
-                        <strong> 
-                            <a href="/Events.html#hd1-2">教育新闻</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/Events.html#hd1-3">故宫博物院教育中心</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong>
-                             <a href="/Events.html#hd1-6">国际博协培训中心</a> 
-                        </strong>
-                        </p>
-                        <p class="last">
-                            <strong> 
-                                <a href="/Events.html#hd1-7">故宫志愿者</a>
-                             </strong>
-                        </p>
-                </div>
-            </div>
-            
-            <div class="child c5">
-				<div class="p" style="margin-left: 270.5px;">
-					<p>
-                        <strong> 
-                            <a href="/explore/buildings.html">建筑</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/explore/collections.html">藏品</a>
-                         </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/explore/ancients.html">古籍</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/explores/courts.html">宫廷历史</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/explore/protects.html">文物医院</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/explore/cultures.html">文化专题</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="http://minghuaji.dpm.org.cn" target="_blank">名画记</a>
+                            <a href="/Events.html#hd1-7">故宫志愿者</a>
                             </strong>
                     </p>
-                    <p>
-                        <strong> 
-                            <a href="/shuziduobaoge/html.html" target="_blank">数字多宝阁</a>
-                        </strong>
-                    </p>
-                    <p class="last">
-                        <strong> 
-                            <a href="https://digicol.dpm.org.cn/" target="_blank">数字文物库</a>
-                        </strong>
-                    </p>
-                </div>
             </div>
-            
-            <div class="child c6">
-				<div class="p" style="margin-left: 457.5px;">
-					<p>
-                        <strong> 
-                            <a href="/learning/dynamic.html">学术活动</a> 
+        </div>
+        
+        <div class="child c5">
+            <div class="p" style="margin-left: 270.5px;">
+                <p>
+                    <strong> 
+                        <a href="/explore/buildings.html">建筑</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/explore/collections.html">藏品</a>
                         </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/expert.html">专家名录</a> 
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/explore/ancients.html">古籍</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/explores/courts.html">宫廷历史</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/explore/protects.html">文物医院</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/explore/cultures.html">文化专题</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="http://minghuaji.dpm.org.cn" target="_blank">名画记</a>
                         </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/achaime/institute.html">故宫研究院</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong>
-                            <a href="/science/platform.html">故宫学院</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/organization_others.html">其他学术机构</a> 
-                        </strong>
-                    </p>
-                    <p class="last">
-                        <strong> 
-                            <a href="/journals.html">故宫博物院院刊</a> 
-                        </strong>
-                    </p>				
-                </div>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/shuziduobaoge/html.html" target="_blank">数字多宝阁</a>
+                    </strong>
+                </p>
+                <p class="last">
+                    <strong> 
+                        <a href="https://digicol.dpm.org.cn/" target="_blank">数字文物库</a>
+                    </strong>
+                </p>
             </div>
-            
-            <div class="child c7">
-				<div class="p" style="margin-left: 659.5px;">
-					<p>
-                        <strong> 
-                            <a href="/publishes.html">故宫出版</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/Creative.html#protects">文创产品</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/lights/royal.html">故宫壁纸</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong>
-                             <a href="/Creative.html#app">故宫APP</a> 
-                        </strong>
-                    </p>
-                    <p class="last">
-                        <strong> 
-                            <a href="http://young.dpm.org.cn/damaoxian#gamezone" target="_blank">故宫游戏</a> 
-                        </strong>
-                    </p>				
-                </div>
+        </div>
+        
+        <div class="child c6">
+            <div class="p" style="margin-left: 457.5px;">
+                <p>
+                    <strong> 
+                        <a href="/learning/dynamic.html">学术活动</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/expert.html">专家名录</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/achaime/institute.html">故宫研究院</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong>
+                        <a href="/science/platform.html">故宫学院</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/organization_others.html">其他学术机构</a> 
+                    </strong>
+                </p>
+                <p class="last">
+                    <strong> 
+                        <a href="/journals.html">故宫博物院院刊</a> 
+                    </strong>
+                </p>				
             </div>
-            
-            <div class="child c8">
-				<div class="p">
-					<p>
-                        <strong> 
-                            <a href="/about/about_view.html">总说</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong>
-                            <a href="/about/leader_list.html">领导</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/about/information.html">资讯</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/about/about_chron.html">院史编年</a> 
-                        </strong>
-                    </p>
-                    <p>
-                        <strong> 
-                            <a href="/about/bill_billboard.html">景仁榜</a> 
-                        </strong>
-                    </p>
-                    <p class="last">
-                        <strong> 
-                            <a href="/about/organization.html">机构设置</a> 
-                        </strong>
-                    </p>				
-                </div>
+        </div>
+        
+        <div class="child c7">
+            <div class="p" style="margin-left: 659.5px;">
+                <p>
+                    <strong> 
+                        <a href="/publishes.html">故宫出版</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/Creative.html#protects">文创产品</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/lights/royal.html">故宫壁纸</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong>
+                            <a href="/Creative.html#app">故宫APP</a> 
+                    </strong>
+                </p>
+                <p class="last">
+                    <strong> 
+                        <a href="http://young.dpm.org.cn/damaoxian#gamezone" target="_blank">故宫游戏</a> 
+                    </strong>
+                </p>				
             </div>
+        </div>
+        
+        <div class="child c8">
+            <div class="p">
+                <p>
+                    <strong> 
+                        <a href="/about/about_view.html">总说</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong>
+                        <a href="/about/leader_list.html">领导</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/about/information.html">资讯</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/about/about_chron.html">院史编年</a> 
+                    </strong>
+                </p>
+                <p>
+                    <strong> 
+                        <a href="/about/bill_billboard.html">景仁榜</a> 
+                    </strong>
+                </p>
+                <p class="last">
+                    <strong> 
+                        <a href="/about/organization.html">机构设置</a> 
+                    </strong>
+                </p>				
+            </div>
+        </div>
+
     </div>
 </body>
 </html>

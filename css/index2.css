@@ -1,0 +1,47 @@
+/* 导航部分 */
+
+.header .nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+.nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(112, 112, 112,0.8);
+}
+.nav>.clear {
+    width: 852px;
+    display: flex;
+    justify-content: space-between;
+}
+.clear a {
+    display: block;
+    padding: 12px 35px;
+}
+.clear b {
+    display: none;
+}
+.nav_child {
+    /* background: transparent; */
+    background: orange;
+}
+.nav_child .child {
+    height: 0px;
+    line-height: 44px;
+    display: flex;
+    justify-content: center;
+}
+.child.c1 {
+    height: 44px;
+    display: block;
+}
+.child .p {
+    width: 56%;
+    display: flex;
+    justify-content: flex-start;
+}
+.child .p>p {
+    padding: 0px 1.5rem;
+}
