@@ -11,21 +11,34 @@
     <script>
 
         //函数封装减少hover移入的代码重复
-        function createHover(content,str,ele){
-            content===str&&$(ele).css("height","44px");
-           
+        function createHover(content,str,ele){ 
+          if(content===str){
+            $(".child.childH").removeClass("childH");
+            $(ele).addClass("childH");
+          }    
         }
+
         //函数封装减少hover移出的代码重复
         function createHoverOut(content,str,ele){
-            content===str&&$(".nav_child>.child>.p").hover(()=>{
-                    $(this).css("height","44px");
-                },()=>{
-                    $(ele).css("height","0px");
+            if(content===str){
+                $(".child>.p").hover(
+                ()=>{
+                    $(this).addClass("childH");
+                },
+                ()=>{
+                    $(ele).removeClass("childH");
                 }
-                ) 
+            );
+            }
+             
         }
+
+
+        //ready
          $(()=>{
-            $(".header>.nav>.clear>li").hover((e)=>{
+             
+
+            $(".clear>li").hover((e)=>{
                 var html=e.target.innerHTML;
                if(html==="首页"){
 
@@ -181,7 +194,7 @@
         </div>
         
         <div class="child c5">
-            <div class="p" style="margin-left: 270.5px;">
+            <div class="p">
                 <p>
                     <strong> 
                         <a href="/explore/buildings.html">建筑</a> 
@@ -231,7 +244,7 @@
         </div>
         
         <div class="child c6">
-            <div class="p" style="margin-left: 457.5px;">
+            <div class="p">
                 <p>
                     <strong> 
                         <a href="/learning/dynamic.html">学术活动</a> 
@@ -266,7 +279,7 @@
         </div>
         
         <div class="child c7">
-            <div class="p" style="margin-left: 659.5px;">
+            <div class="p">
                 <p>
                     <strong> 
                         <a href="/publishes.html">故宫出版</a> 

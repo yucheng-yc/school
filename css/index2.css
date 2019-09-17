@@ -22,23 +22,30 @@
 }
 .clear b {
     display: none;
+    text-align: center;
+    margin-left: 2.7rem;
 }
 .nav_child {
     /* background: transparent; */
     background: orange;
 }
 .nav_child .child {
+    visibility: hidden;
     height: 0px;
     line-height: 44px;
     display: flex;
     justify-content: center;
+}
+.childH {
+    height: 44px !important;
+    visibility: visible !important;
+    
 }
 .child.c1 {
     height: 44px;
     display: block;
 }
 .child .p {
-    width: 56%;
     display: flex;
     justify-content: flex-start;
 }
