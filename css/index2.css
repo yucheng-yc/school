@@ -1,6 +1,6 @@
 /* 导航部分 */
 
-.header .nav {
+.header {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -9,25 +9,34 @@
 .nav {
     display: flex;
     justify-content: center;
-    background-color: rgba(112, 112, 112,0.8);
+    background-color: rgba(25, 25, 25, 0.6);
+    
 }
 .nav>.clear {
     width: 852px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 .clear a {
     display: block;
     padding: 12px 35px;
 }
-.clear b {
-    display: none;
-    text-align: center;
-    margin-left: 2.7rem;
+.clear>li {
+    position: relative;
 }
-.nav_child {
-    /* background: transparent; */
+.clear>li>b {
+    position: absolute;
+    bottom: -4px;
+    left: 2.7rem;
+}
+.clear>li:hover {
     background: orange;
+}
+.p>p:hover {
+    background: rgba(25, 25, 25, 0.6);
+}
+.nav_child>.child:not(.c1) {
+    background: rgba(230, 180, 89,0.6);
 }
 .nav_child .child {
     visibility: hidden;
@@ -41,10 +50,10 @@
     visibility: visible !important;
     
 }
-.child.c1 {
+/* .child.c1 {
     height: 44px;
     display: block;
-}
+} */
 .child .p {
     display: flex;
     justify-content: flex-start;
