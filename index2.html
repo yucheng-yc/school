@@ -14,9 +14,11 @@
 
             //函数封装减少hover移入的代码重复
             function createHover(content,str,ele){ 
-            if(content===str){
+            if(content.innerHTML===str){
                 $(".child.childH").removeClass("childH");
                 $(ele).addClass("childH");
+                $(".clear>li>b").removeClass("bAdd");
+                $(content).next().addClass("bAdd");
             }    
             }
 
@@ -28,15 +30,19 @@
                     },
                     ()=>{
                         $(ele).removeClass("childH");
+                        $(".clear>li>b").removeClass("bAdd");
                     }
                 );  
             }
 
 
             $(".clear>li").hover((e)=>{
-                var html=e.target.innerHTML;
-               if(html==="首页"){
-
+                var html=e.target;
+               if(html.innerHTML==="首页"){
+                   //清除所有效果
+                $(".child").removeClass("childH");
+                //清除下三角
+                $(".clear>li>b").removeClass("bAdd");
                }
                 createHover(html,"导览",".c2");
                 createHover(html,"展览",".c3");
@@ -62,6 +68,7 @@
 
             $(".header").mouseleave(function(){
                 $(".child").removeClass("childH");
+                $(".clear>li>b").removeClass("bAdd");
             })
         })
     

@@ -25,15 +25,19 @@
     position: relative;
 }
 .clear>li>b {
-    position: absolute;
+    display: none;
     bottom: -4px;
     left: 2.7rem;
+}
+.bAdd {
+    display: inline !important;
+    position: absolute !important;
 }
 .clear>li:hover {
     background: orange;
 }
-.p>p:hover {
-    background: rgba(25, 25, 25, 0.6);
+.p>p a:hover {
+    color: red !important; 
 }
 .nav_child>.child:not(.c1) {
     background: rgba(230, 180, 89,0.6);
@@ -47,17 +51,16 @@
 }
 .childH {
     height: 44px !important;
-    visibility: visible !important;
-    
+    visibility: visible !important; 
 }
-/* .child.c1 {
-    height: 44px;
-    display: block;
-} */
+
 .child .p {
     display: flex;
     justify-content: flex-start;
 }
 .child .p>p {
     padding: 0px 1.5rem;
+} 
+.child>.p>p:not(:last-child) {
+    background: url(../img/yz.png) no-repeat right center/20px 30px;
 }
